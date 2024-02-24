@@ -14,7 +14,7 @@ const NavBar = () => {
     return (
         <nav>
             {/* comienza barra de navegacion desktop */}
-            <div className={`mobile:hidden laptop:flex justify-between items-center px-8 shadow-sm`}>
+            <div className={`hidden laptop:flex justify-between items-center px-8 shadow-sm`}>
                 <div>
                     <img src={logo} alt="logo_nike" className=" size-20 min-w-20" />
                 </div>
@@ -41,7 +41,7 @@ const NavBar = () => {
             {/* termina barra de navegacion desktop */}
 
             {/*             empieza barra de navegacion mobile */}
-            <div className={`mobile:flex laptop:hidden justify-between items-center px-4 bg-white border border-gray-200 fixed top-0 left-0 right-0`}>
+            <div className={`flex laptop:hidden justify-between items-center px-4 bg-white border border-gray-200 fixed top-0 left-0 right-0`}>
                 <button onClick={() => setOpen(true)}>
                     <MenuWidget />
                 </button>
