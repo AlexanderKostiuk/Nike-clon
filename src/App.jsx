@@ -9,8 +9,8 @@ function App() {
   return (
     <div>
       <NavBar />
-      <ItemListContainer greeting="Bienvenido al web clone de nike hecho por Alexander Kostiuk"></ItemListContainer>
-    </div>
+{/*       <ItemListContainer greeting="Bienvenido al web clone de nike hecho por Alexander Kostiuk"></ItemListContainer>
+ */}    </div>
   )
 }
 
