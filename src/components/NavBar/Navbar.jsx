@@ -133,7 +133,7 @@ const NavBar = () => {
             <div className={`${!openCarrito && "hidden"} min-h-screen w-full 
             fixed top-0 right-0 left-0 bg-black opacity-30`} onClick={() => setOpenCarrito(false)}></div>
 
-            <div className={`${!openCarrito && "hidden"} bg-white min-h-screen w-96 fixed top-0 right-0`}>
+            <div className={`${!openCarrito && "hidden"} bg-white min-h-screen w-[420px] fixed top-0 right-0`}>
                 <div className=" flex justify-between items-center mx-8 my-4">
                     <h1 className=" text-base font-medium">MI COMPRA</h1>
                     <button onClick={() => setOpenCarrito(false)}>
