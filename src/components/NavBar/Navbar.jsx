@@ -16,7 +16,7 @@ const NavBar = () => {
     const [openCarrito, setOpenCarrito] = useState(false)
 
     return (
-        <nav>
+        <nav className="">
             {/* comienza barra de navegacion desktop */}
             <div className={`hidden laptop:flex justify-between items-center px-8 shadow-sm`}>
                 <div>
@@ -63,10 +63,6 @@ const NavBar = () => {
                         <CartWidget />
                     </div>
                 </div>
-
-                <div className={`${!open && "hidden"} min-h-screen w-full fixed`}>
-                </div>
-
 
                 {/* Aca agrego un div que ocupa toda la pantalla para luego desplegar la Navbar lateral izquierda
                 y que el resto de pantalla tenga menos opacidad */}

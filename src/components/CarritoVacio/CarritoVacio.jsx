@@ -1,6 +1,6 @@
 const CarritoVacio = () => {
     return (
-        <div className="grid gap-y-8 mb-24">
+        <div className="grid gap-y-8 mb-24 z-30">
             <div className="flex justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     fill="none"
