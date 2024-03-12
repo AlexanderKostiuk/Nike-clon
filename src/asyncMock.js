@@ -3,7 +3,7 @@ const products = [
         id: '1',
         name: "Nike Dri-FIT Club",
         price: 1000,
-        category: "gorras",
+        category: "Gorras",
         img: "https://nikearprod.vtexassets.com/arquivos/ids/762567-1000-1000?v=638316092662730000&width=1000&height=1000&aspect=true",
         stock: 25,
         description: "descripcion Nike Dri-FIT Club"

@@ -48,7 +48,7 @@ const NavBar = () => {
             {/* termina barra de navegacion desktop */}
 
             {/*empieza barra de navegacion mobile */}
-            <div className={`flex laptop:hidden justify-between items-center px-4 bg-white border border-gray-200 fixed top-0 left-0 right-0`}>
+            <div className={`flex laptop:hidden justify-between items-center px-4 bg-white border border-gray-200`}>
                 <button onClick={() => setOpen(true)}>
                     <MenuWidget />
                 </button>
