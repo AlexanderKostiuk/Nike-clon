@@ -1,21 +1,23 @@
 import './App.css'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-import MenuTitle from './components/MenuTitle/MenuTitle'
 import NavBar from './components/NavBar/Navbar'
-import SideBar from './components/SideBar/SideBar'
+import Hero from './components/Hero/Hero'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+
 
 function App() {
 
-  return (
-    <div>
-      <NavBar />
-      <MenuTitle title="Nike"></MenuTitle>
-      <div className="flex justify-center">
-        <SideBar></SideBar>
-        <ItemListContainer props={"PRODUCTOS"}></ItemListContainer>
-      </div>
-    </div>
-  )
+    return (
+        <>
+            <BrowserRouter>
+                <NavBar />
+                <Routes>
+                    <Route path='/Nike-clon' element={<Hero></Hero>}></Route>
+                    <Route path='/Nike-clon/item/:itemId' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
+                </Routes>
+            </BrowserRouter>
+        </>
+    )
 }
 
 export default App

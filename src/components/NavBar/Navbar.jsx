@@ -9,6 +9,7 @@ import InfoWidget from "../Widgets/InfoWidget/InfoWidget"
 import TiendasWidget from "../Widgets/TiendasWidget/TiendasWidget"
 import ArrowRightWidget from "../Widgets/ArrowRightWidget/ArrowRight"
 import CarritoVacio from "../CarritoVacio/CarritoVacio"
+import { Link } from "react-router-dom"
 
 
 const NavBar = () => {
@@ -20,16 +21,16 @@ const NavBar = () => {
             {/* comienza barra de navegacion desktop */}
             <div className={`hidden laptop:flex justify-between items-center px-8 shadow-sm`}>
                 <div>
-                    <img src={logo} alt="logo_nike" className=" size-20 min-w-20" />
+                    <Link to='/Nike-clon'><img src={logo} alt="logo_nike" className=" size-20 min-w-20 cursor-pointer" /></Link>
                 </div>
 
                 <div>
                     <ul className="flex gap-4 text-base ml-24">
-                        <a href="#" className="underline-offset-8 hover:underline"><li>Destacados</li></a>
+                        <Link to='/Nike-clon' className="underline-offset-8 hover:underline"><li>Destacados</li></Link>
                         <a href="#" className="underline-offset-8 hover:underline"><li>Hombre</li></a>
                         <a href="#" className="underline-offset-8 hover:underline"><li>Mujer</li></a>
                         <a href="#" className="underline-offset-8 hover:underline"><li>Niño/a</li></a>
-                        <a href="#" className="underline-offset-8 hover:underline"><li>Accesorios</li></a>
+                        <Link to='/Nike-clon/accesorios' className="underline-offset-8 hover:underline"><li>Accesorios</li></Link>
                         <a href="#" className="underline-offset-8 hover:underline"><li>Sale</li></a>
                     </ul>
                 </div>
@@ -136,6 +137,7 @@ const NavBar = () => {
                         <CloseMenuWidget></CloseMenuWidget>
                     </button>
                 </div>
+                <hr/>
 
                 <div className="min-h-screen w-full flex justify-center items-center">
                     <CarritoVacio></CarritoVacio>

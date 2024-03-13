@@ -23,6 +23,10 @@ export default {
 
       'desktop': '1280px',
       // => @media (min-width: 1280px) { ... }
-  },
+      
+      'desktop-lg' : '1410px'
+      // => @media (min-width: 1410px) { ... }
+  
+    },
   plugins: [],
 }}

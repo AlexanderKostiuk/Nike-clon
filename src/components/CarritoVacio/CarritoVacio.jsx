@@ -14,6 +14,7 @@ const CarritoVacio = () => {
                 </svg>
             </div>
             <h1>Tu carrito está vacío</h1>
+            <hr />
         </div>
     )
 }
