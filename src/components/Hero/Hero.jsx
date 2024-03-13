@@ -5,8 +5,8 @@ const Hero = () => {
     return (
         <div className="mt-20">
             <div className="flex justify-center">
-                <SideBar></SideBar>
-                <ItemListContainer props={"PRODUCTOS"}></ItemListContainer>
+{/*                 <SideBar></SideBar> */}
+                <ItemListContainer></ItemListContainer>
             </div>
         </div>
 

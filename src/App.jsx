@@ -13,7 +13,8 @@ function App() {
                 <NavBar />
                 <Routes>
                     <Route path='/Nike-clon' element={<Hero></Hero>}></Route>
-                    <Route path='/Nike-clon/item/:itemId' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
+                    <Route path='/Nike-clon/category/:categoryId' element={<Hero></Hero>}></Route>
+                    <Route path='/Nike-clon/category/:categoryId/item/:itemId' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
                 </Routes>
             </BrowserRouter>
         </>

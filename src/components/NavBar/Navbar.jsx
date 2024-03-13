@@ -27,11 +27,11 @@ const NavBar = () => {
                 <div>
                     <ul className="flex gap-4 text-base ml-24">
                         <Link to='/Nike-clon' className="underline-offset-8 hover:underline"><li>Destacados</li></Link>
-                        <a href="#" className="underline-offset-8 hover:underline"><li>Hombre</li></a>
-                        <a href="#" className="underline-offset-8 hover:underline"><li>Mujer</li></a>
-                        <a href="#" className="underline-offset-8 hover:underline"><li>Niño/a</li></a>
-                        <Link to='/Nike-clon/accesorios' className="underline-offset-8 hover:underline"><li>Accesorios</li></Link>
-                        <a href="#" className="underline-offset-8 hover:underline"><li>Sale</li></a>
+                        <Link to='./Nike-clon/category/Hombre' className="underline-offset-8 hover:underline"><li>Hombre</li></Link>
+                        <Link to='./Nike-clon/category/Mujer'className="underline-offset-8 hover:underline"><li>Mujer</li></Link>
+                        <Link to='./Nike-clon/category/Kids'className="underline-offset-8 hover:underline"><li>Niño/a</li></Link>
+                        <Link to='./Nike-clon/category/Accesorios'className="underline-offset-8 hover:underline"><li>Accesorios</li></Link>
+{/*                         <Link className="underline-offset-8 hover:underline"><li>Sale</li></Link> */}
                     </ul>
                 </div>
 
@@ -80,31 +80,26 @@ const NavBar = () => {
                         </button>
                     </div>
                     <ul className="ml-4">
-                        <div className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <a href="#" className="text-xl underline-offset-2 hover:underline"><li>Destacados</li></a>
+                        <div onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
+                            <Link to='./Nike-clon' className="text-xl underline-offset-2 hover:underline"><li>Destacados</li></Link>
                             <ArrowRightWidget></ArrowRightWidget>
                         </div>
-                        <div className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <a href="#" className="text-xl underline-offset-2 hover:underline"><li>Hombre</li></a>
+                        <div onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
+                            <Link to='./Nike-clon/category/Hombre' className="text-xl underline-offset-2 hover:underline"><li>Hombre</li></Link>
                             <ArrowRightWidget></ArrowRightWidget>
                         </div>
-                        <div className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <a href="#" className="text-xl underline-offset-2 hover:underline"><li>Mujer</li></a>
+                        <div onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
+                            <Link to='./Nike-clon/category/Mujer' className="text-xl underline-offset-2 hover:underline"><li>Mujer</li></Link>
                             <ArrowRightWidget></ArrowRightWidget>
                         </div>
-                        <div className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <a href="#" className="text-xl underline-offset-2 hover:underline"><li>Niño/a</li></a>
+                        <div onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
+                            <Link to='./Nike-clon/category/Kids' className="text-xl underline-offset-2 hover:underline"><li>Niño/a</li></Link>
                             <ArrowRightWidget></ArrowRightWidget>
                         </div>
-                        <div className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <a href="#" className="text-xl underline-offset-2 hover:underline"><li>Accesorios</li></a>
+                        <div onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
+                            <Link to='./Nike-clon/category/Accesorios' className="text-xl underline-offset-2 hover:underline"><li>Accesorios</li></Link>
                             <ArrowRightWidget></ArrowRightWidget>
                         </div>
-                        <div className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <a href="#" className="text-xl underline-offset-2 hover:underline"><li>Sale</li></a>
-                            <ArrowRightWidget></ArrowRightWidget>
-                        </div>
-
                     </ul>
                     <div className=" flex items-center gap-2 ml-4 mt-6">
                         <img src={JumpmanLogo} alt="jumpman logo" className="size-8" />
