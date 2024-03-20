@@ -1,3 +1,5 @@
+import AccordionUi from "../Accordion/Accordion"
+
 const SideBar = () => {
     return (
         <div className="hidden laptop:block laptop:min-w-72">
@@ -7,7 +9,7 @@ const SideBar = () => {
                 </div>
                 <hr />
                 <div>
-                    <h2 className="text-base font-medium">Categorías</h2>
+                    <AccordionUi></AccordionUi>
                 </div>
                 <hr />
 

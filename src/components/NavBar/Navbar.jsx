@@ -70,7 +70,7 @@ const NavBar = () => {
                 <div className={`${!open && "hidden"} min-h-screen w-full
                  fixed top-0 left-0 right-0 bg-black opacity-30`} onClick={() => setOpen(false)} ></div>
 
-                {/* Empieza sidebar izquierda */}
+                {/* Empieza navbar en mobile */}
                 <div className={`${!open && "hidden"} bg-white min-h-screen w-96 fixed top-0 left-0`}>
                     <div className="flex justify-between bg-whitete border border-gray-200">
                         <div></div>
@@ -80,26 +80,27 @@ const NavBar = () => {
                         </button>
                     </div>
                     <ul className="ml-4">
-                        <div onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <Link to='./Nike-clon' className="text-xl underline-offset-2 hover:underline"><li>Destacados</li></Link>
+                        <Link to='./Nike-clon' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
+                            <a className="text-xl" ><li>Destacados</li></a>
                             <ArrowRightWidget></ArrowRightWidget>
-                        </div>
-                        <div onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <Link to='./Nike-clon/category/Hombre' className="text-xl underline-offset-2 hover:underline"><li>Hombre</li></Link>
+                        </Link>
+                        <Link to='./Nike-clon/category/Hombre' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
+                            <a className="text-xl"><li>Hombre</li></a>
                             <ArrowRightWidget></ArrowRightWidget>
-                        </div>
-                        <div onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <Link to='./Nike-clon/category/Mujer' className="text-xl underline-offset-2 hover:underline"><li>Mujer</li></Link>
+                        </Link>
+                        <Link to='./Nike-clon/category/Mujer' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
+                            <a className="text-xl"><li>Mujer</li></a>
                             <ArrowRightWidget></ArrowRightWidget>
-                        </div>
-                        <div onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <Link to='./Nike-clon/category/Kids' className="text-xl underline-offset-2 hover:underline"><li>Niño/a</li></Link>
+                        </Link>
+                        <Link to='./Nike-clon/category/Kids' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
+                            <a className="text-xl"><li>Niño/as</li></a>
                             <ArrowRightWidget></ArrowRightWidget>
-                        </div>
-                        <div onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <Link to='./Nike-clon/category/Accesorios' className="text-xl underline-offset-2 hover:underline"><li>Accesorios</li></Link>
+                        </Link>
+                        <Link to='./Nike-clon/category/Accesorios' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
+                            <a className="text-xl"><li>Accesorios</li></a>
                             <ArrowRightWidget></ArrowRightWidget>
-                        </div>
+                        </Link>
+
                     </ul>
                     <div className=" flex items-center gap-2 ml-4 mt-6">
                         <img src={JumpmanLogo} alt="jumpman logo" className="size-8" />
@@ -122,10 +123,10 @@ const NavBar = () => {
 
             {/* Aca agrego un div que ocupa toda la pantalla para luego desplegar la sidebar lateral derecha que sería el carrito
                 y que el resto de pantalla tenga menos opacidad */}
-            <div className={`${!openCarrito && "hidden"} min-h-screen w-full 
+            <div className={`${!openCarrito && "hidden"} min-h-screen w-full z-10
             fixed top-0 right-0 left-0 bg-black opacity-30`} onClick={() => setOpenCarrito(false)}></div>
 
-            <div className={`${!openCarrito && "hidden"} bg-white min-h-screen w-[420px] fixed top-0 right-0`}>
+            <div className={`${!openCarrito && "hidden"} bg-white min-h-screen w-[420px] fixed top-0 right-0 z-50`}>
                 <div className=" flex justify-between items-center mx-8 my-4">
                     <h1 className=" text-base font-medium">MI COMPRA</h1>
                     <button onClick={() => setOpenCarrito(false)}>

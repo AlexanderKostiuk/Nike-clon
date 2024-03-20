@@ -6,7 +6,7 @@ const products = [
         price: '42.000',
         category: "Accesorios",
         type: "Gorras",
-        img: "https://nikearprod.vtexassets.com/arquivos/ids/762567-1000-1000?v=638316092662730000&width=1000&height=1000&aspect=true",
+        img: "https://nikearprod.vtexassets.com/arquivos/ids/762567-1000-1000?v=638316092662730000&width=500&height=500&aspect=true",
         img_sec: "https://nikearprod.vtexassets.com/arquivos/ids/763614-800-800?width=800&height=800&aspect=true",
         stock: 25,
         description: "Descripcion Nike Dri-FIT Club"
