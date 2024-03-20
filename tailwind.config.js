@@ -7,7 +7,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        gris: '#f5f5f5'
+        gris: '#f5f5f5',
+        negroNike: '#111111',
+        grisOscuro: '#585858'
       },
     },
 

@@ -12,8 +12,8 @@ const AccordionUi = () => {
   return (
     <div className=' z-10'>
       <Accordion sx={{
-        /*                 opacity: 1,
-                        zIndex: 10 */
+        border: 'none',
+        boxShadow: 'none'
       }}>
         <AccordionSummary
           id='pane1'
