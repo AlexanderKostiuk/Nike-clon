@@ -17,9 +17,9 @@ const NavBar = () => {
     const [openCarrito, setOpenCarrito] = useState(false)
 
     return (
-        <nav className="">
+        <nav className="sticky top-0 w-full opacity-100 z-[9999999]">
             {/* comienza barra de navegacion desktop */}
-            <div className={`hidden laptop:flex justify-between items-center px-8 shadow-sm`}>
+            <div className={`hidden laptop:flex bg-white justify-between items-center px-8 shadow-sm`}>
                 <div>
                     <Link to='/Nike-clon'><img src={logo} alt="logo_nike" className=" size-20 min-w-20 cursor-pointer" /></Link>
                 </div>

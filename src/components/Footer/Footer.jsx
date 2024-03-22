@@ -8,7 +8,7 @@ import {faXTwitter, faFacebook, faYoutube, faInstagram} from "@fortawesome/free-
 const Footer = () => {
     return (
 
-        <div className=" bg-negroNike w-full laptop:h-[420px] relative">
+        <div className=" bg-negroNike w-full laptop:h-[420px] relative z-20">
             <div className="laptop:flex p-8 justify-between">
                 {/* Buscar tienda */}
                 <div >

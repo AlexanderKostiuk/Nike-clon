@@ -23,7 +23,7 @@ const ItemListContainer = ({ props }) => {
     }, [categoryId])
 
     return (
-        <div className="my-8 laptop:w-full grid justify-center">
+        <div className="laptop:w-full grid justify-center">
             {/* <h1 className=" bg-red-600 flex my-4 justify-center">{props}</h1> */}
             <div className="flex justify-between mobile:px-6">
                 <p className="hidden laptop:flex text-base font-normal">{props}</p>
