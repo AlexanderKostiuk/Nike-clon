@@ -21,13 +21,13 @@ const ItemListContainer = ({ props }) => {
                 })
 
     }, [categoryId])
-
+    
     return (
         <div className="laptop:w-full grid justify-center">
             {/* <h1 className=" bg-red-600 flex my-4 justify-center">{props}</h1> */}
             <div className="flex justify-between mobile:px-6">
                 <p className="hidden laptop:flex text-base font-normal">{props}</p>
-                <div className="flex w-full justify-evenly laptop:justify-end gap-8 pb-4">
+{/*                 <div className="flex w-full justify-evenly laptop:justify-end gap-8 pb-4">
                     <div className="flex gap-2 cursor-pointer">
                         <p>Ocultar Filtros</p>
                         <FilterWidget></FilterWidget>
@@ -37,7 +37,7 @@ const ItemListContainer = ({ props }) => {
                         <ArrowDown></ArrowDown>
                     </div>
 
-                </div>
+                </div> */}
 
             </div>
             <ItemList products={products} />

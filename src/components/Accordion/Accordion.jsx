@@ -11,7 +11,7 @@ import { grey } from '@mui/material/colors';
 const AccordionUi = () => {
   return (
     <div className=' z-10'>
-      <Accordion sx={{
+      <Accordion defaultExpanded={true} sx={{
         border: 'none',
         boxShadow: 'none'
       }}>

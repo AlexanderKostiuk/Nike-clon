@@ -72,7 +72,7 @@ const NavBar = () => {
 
                 {/* Empieza navbar en mobile */}
                 <div className={`${!open && "hidden"} bg-white min-h-screen w-96 fixed top-0 left-0`}>
-                    <div className="flex justify-between bg-whitete border border-gray-200">
+                    <div className="flex justify-between bg-whitete border border-gray-200 ">
                         <div></div>
                         <img src={logo} alt="Logo nike" className="size-16 ml-4" />
                         <button onClick={() => setOpen(false)} className="mr-4">
@@ -102,19 +102,25 @@ const NavBar = () => {
                         </Link>
 
                     </ul>
-                    <div className=" flex items-center gap-2 ml-4 mt-6">
-                        <img src={JumpmanLogo} alt="jumpman logo" className="size-8" />
-                        <a href="#"><p className=" font-bold">Jordan</p></a>
-                    </div>
+                    <Link to='./Nike-clon/NotFound'  onClick={() => setOpen(false)}>
+                        <div className=" flex items-center gap-2 ml-4 mt-6">
+                            <img src={JumpmanLogo} alt="jumpman logo" className="size-8" />
+                            <p className=" font-bold">Jordan</p>
+                        </div>
+                    </Link>
 
-                    <div className="flex items-center ml-4 mt-6 gap-4 ">
-                        <InfoWidget></InfoWidget>
-                        <a href="#"><p className=" text-xs font-bold">Ayuda</p></a>
-                    </div>
-                    <div className="flex items-center ml-4 mt-6 gap-4">
-                        <TiendasWidget></TiendasWidget>
-                        <a href="#"><p className=" text-xs font-semibold">Buscar tiendas</p></a>
-                    </div>
+                    <Link to='./Nike-clon/NotFound'  onClick={() => setOpen(false)}>
+                        <div className="flex items-center ml-4 mt-6 gap-4 ">
+                            <InfoWidget></InfoWidget>
+                            <a href="#"><p className=" text-xs font-bold">Ayuda</p></a>
+                        </div>
+                    </Link>
+                    <Link to='./Nike-clon/NotFound'  onClick={() => setOpen(false)}>
+                        <div className="flex items-center ml-4 mt-6 gap-4">
+                            <TiendasWidget></TiendasWidget>
+                            <a href="#"><p className=" text-xs font-semibold">Buscar tiendas</p></a>
+                        </div>
+                    </Link>
                 </div>
                 {/* termina sidebar izquierda */}
             </div>
