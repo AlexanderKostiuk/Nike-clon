@@ -10,7 +10,6 @@ import PageNotFound from "./components/PageNotFound/PageNotFound"
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop"
 
 function App() {
-
     return (
         <>
             <BrowserRouter>

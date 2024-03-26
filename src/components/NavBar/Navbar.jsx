@@ -81,23 +81,23 @@ const NavBar = () => {
                     </div>
                     <ul className="ml-4">
                         <Link to='./Nike-clon' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <a className="text-xl" ><li>Destacados</li></a>
+                            <li className="text-xl">Destacados</li>
                             <ArrowRightWidget></ArrowRightWidget>
                         </Link>
                         <Link to='./Nike-clon/category/Hombre' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <a className="text-xl"><li>Hombre</li></a>
+                            <li className="text-xl">Hombre</li>
                             <ArrowRightWidget></ArrowRightWidget>
                         </Link>
                         <Link to='./Nike-clon/category/Mujer' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <a className="text-xl"><li>Mujer</li></a>
+                            <li className="text-xl">Mujer</li>
                             <ArrowRightWidget></ArrowRightWidget>
                         </Link>
                         <Link to='./Nike-clon/category/Kids' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <a className="text-xl"><li>Niño/as</li></a>
+                            <li className="text-xl">Niño/as</li>
                             <ArrowRightWidget></ArrowRightWidget>
                         </Link>
                         <Link to='./Nike-clon/category/Accesorios' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <a className="text-xl"><li>Accesorios</li></a>
+                            <li className="text-xl">Accesorios</li>
                             <ArrowRightWidget></ArrowRightWidget>
                         </Link>
 
@@ -112,13 +112,13 @@ const NavBar = () => {
                     <Link to='./Nike-clon/NotFound'  onClick={() => setOpen(false)}>
                         <div className="flex items-center ml-4 mt-6 gap-4 ">
                             <InfoWidget></InfoWidget>
-                            <a href="#"><p className=" text-xs font-bold">Ayuda</p></a>
+                            <p className=" text-xs font-bold">Ayuda</p>
                         </div>
                     </Link>
                     <Link to='./Nike-clon/NotFound'  onClick={() => setOpen(false)}>
                         <div className="flex items-center ml-4 mt-6 gap-4">
                             <TiendasWidget></TiendasWidget>
-                            <a href="#"><p className=" text-xs font-semibold">Buscar tiendas</p></a>
+                            <p className=" text-xs font-semibold">Buscar tiendas</p>
                         </div>
                     </Link>
                 </div>

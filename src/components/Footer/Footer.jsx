@@ -52,7 +52,7 @@ const Footer = () => {
           </Link>
           <h2 className="text-white text-xs font-bold py-1 cursor-text">Boton de arrepentimiento</h2>
           <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
-            <a href="" className="text-zinc-500 text-xs py-1 cursor-pointer underline transition-all hover:text-white ">Ver todos</a>
+            <p className="text-zinc-500 text-xs py-1 cursor-pointer underline transition-all hover:text-white">Ver todos</p>
           </Link>
 
         </div>

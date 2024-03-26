@@ -14,6 +14,7 @@ const ItemDetailContainer = () => {
             .then(result => {
                 setProduct(result)
                 console.log(result)
+                console.log(result.type)
             })
     }, [itemId])
     
