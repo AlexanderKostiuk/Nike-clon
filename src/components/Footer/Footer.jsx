@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 /* import {} from "@fortawesome/free-regular-svg-icons" */
 import { faXTwitter, faFacebook, faYoutube, faInstagram } from "@fortawesome/free-brands-svg-icons"
 import { Link } from "react-router-dom"
+import ScrollToTop from "../ScrollToTop/ScrollToTop"
 
 
 const Footer = () => {
@@ -12,46 +13,45 @@ const Footer = () => {
       <div className="laptop:flex p-8 justify-between">
         {/* Buscar tienda */}
         <div >
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }} >
+          <Link to='/Nike-clon/NotFound'>
             <h1 className="pt-2 laptop:pt-0 text-white text-sm font-bold cursor-pointer">BUSCAR TIENDA</h1>
           </Link>
         </div>
         {/* Ayuda */}
         <div >
           <h1 className="pt-8 laptop:pt-0 text-white text-sm mb-2 font-bold">AYUDA</h1>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
-            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Envíos y entregas          </p>
+          <Link to='/Nike-clon/NotFound' onClick={<ScrollToTop></ScrollToTop>}>
+            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Envíos y entregas</p>
+          </Link>
+          <Link to='/Nike-clon/NotFound' onClick={<ScrollToTop></ScrollToTop>}>
+            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Devoluciones</p>
 
           </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
-            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Devoluciones               </p>
+          <Link to='/Nike-clon/NotFound' onClick={<ScrollToTop></ScrollToTop>}>
+            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Cambios</p>
 
           </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
-            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Cambios                    </p>
-
-          </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
+          <Link to='/Nike-clon/NotFound' onClick={<ScrollToTop></ScrollToTop>}>
             <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Autogestionar mi devolución</p>
           </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
-            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Opciones de pago           </p>
+          <Link to='/Nike-clon/NotFound' onClick={<ScrollToTop></ScrollToTop>}>
+            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Opciones de pago</p>
 
           </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
-            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Contactate                 </p>
+          <Link to='/Nike-clon/NotFound' onClick={<ScrollToTop></ScrollToTop>}>
+            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Contactate</p>
 
           </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
-            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Defensa al consumidor      </p>
+          <Link to='/Nike-clon/NotFound' onClick={<ScrollToTop></ScrollToTop>}>
+            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Defensa al consumidor</p>
 
           </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
-            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Libro de quejas online     </p>
+          <Link to='/Nike-clon/NotFound' onClick={<ScrollToTop></ScrollToTop>}>
+            <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Libro de quejas online</p>
 
           </Link>
           <h2 className="text-white text-xs font-bold py-1 cursor-text">Boton de arrepentimiento</h2>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
+          <Link to='/Nike-clon/NotFound' onClick={<ScrollToTop></ScrollToTop>}>
             <p className="text-zinc-500 text-xs py-1 cursor-pointer underline transition-all hover:text-white">Ver todos</p>
           </Link>
 
@@ -60,13 +60,13 @@ const Footer = () => {
         {/* Acerca de Nike */}
         <div>
           <h1 className=" pt-8 laptop:pt-0 text-white text-sm font-bold mb-2">ACERCA DE NIKE</h1>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
+          <Link to='/Nike-clon/NotFound'onClick={<ScrollToTop></ScrollToTop>}>
             <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Noticias</p>
           </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
+          <Link to='/Nike-clon/NotFound'onClick={<ScrollToTop></ScrollToTop>}>
             <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Inversionistas</p>
           </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
+          <Link to='/Nike-clon/NotFound'onClick={<ScrollToTop></ScrollToTop>}>
             <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Sustentabilidad</p>
           </Link>
         </div>
@@ -74,22 +74,22 @@ const Footer = () => {
         {/* Novedades nike */}
         <div>
           <h1 className=" pt-8 laptop:pt-0 text-white text-sm font-bold mb-2">NOVEDADES NIKE</h1>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
+          <Link to='/Nike-clon/NotFound'onClick={<ScrollToTop></ScrollToTop>}>
             <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Encontrá tu calzado</p>
           </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
+          <Link to='/Nike-clon/NotFound'onClick={<ScrollToTop></ScrollToTop>}>
             <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">¿Como elegir tú top?</p>
 
           </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
+          <Link to='/Nike-clon/NotFound'onClick={<ScrollToTop></ScrollToTop>}>
             <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Tips saludables</p>
 
           </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
+          <Link to='/Nike-clon/NotFound'onClick={<ScrollToTop></ScrollToTop>}>
             <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Promociónes</p>
 
           </Link>
-          <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
+          <Link to='/Nike-clon/NotFound'onClick={<ScrollToTop></ScrollToTop>}>
             <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">¿Como sigo mi pedido?</p>
 
           </Link>
@@ -122,11 +122,11 @@ const Footer = () => {
           </div>
 
           <div className="flex justify-center gap-4">
-            <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
+            <Link to='/Nike-clon/NotFound'onClick={<ScrollToTop></ScrollToTop>}>
               <p className="text-[10px] text-zinc-500 cursor-pointer hover:text-white">Términos y condiciones</p>
 
             </Link>
-            <Link to='/Nike-clon/NotFound' onClick={() => { window.location.href = "/Nike-clon/NotFound" }}>
+            <Link to='/Nike-clon/NotFound'onClick={<ScrollToTop></ScrollToTop>}>
               <p className="text-[10px] text-zinc-500 cursor-pointer hover:text-white">Política de privacidad y cookies</p>
 
             </Link>
