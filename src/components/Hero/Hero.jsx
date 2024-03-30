@@ -1,5 +1,6 @@
 import ItemListContainer from "../ItemListContainer/ItemListContainer"
 import SideBar from "../SideBar/SideBar"
+import Banner from "../Banner/Banner"
 
 const Hero = () => {
     return (
@@ -8,6 +9,7 @@ const Hero = () => {
                 <SideBar></SideBar>
                 <ItemListContainer></ItemListContainer>
             </div>
+            <Banner></Banner>   
         </div>
 
     )

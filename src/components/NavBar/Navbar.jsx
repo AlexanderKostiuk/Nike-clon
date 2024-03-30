@@ -8,13 +8,11 @@ import CloseMenuWidget from "../Widgets//CloseMenuWidget/CloseMenuWidget"
 import InfoWidget from "../Widgets/InfoWidget/InfoWidget"
 import TiendasWidget from "../Widgets/TiendasWidget/TiendasWidget"
 import ArrowRightWidget from "../Widgets/ArrowRightWidget/ArrowRight"
-import CarritoVacio from "../CarritoVacio/CarritoVacio"
 import { Link } from "react-router-dom"
 
 
 const NavBar = () => {
     const [open, setOpen] = useState(false)
-    const [openCarrito, setOpenCarrito] = useState(false)
 
     return (
         <nav className="sticky top-0 w-full opacity-100 z-[9999999]">
@@ -31,7 +29,6 @@ const NavBar = () => {
                         <Link to='./Nike-clon/category/Mujer'className="underline-offset-8 hover:underline"><li>Mujer</li></Link>
                         <Link to='./Nike-clon/category/Kids'className="underline-offset-8 hover:underline"><li>Niño/a</li></Link>
                         <Link to='./Nike-clon/category/Accesorios'className="underline-offset-8 hover:underline"><li>Accesorios</li></Link>
-{/*                         <Link className="underline-offset-8 hover:underline"><li>Sale</li></Link> */}
                     </ul>
                 </div>
 
@@ -41,9 +38,9 @@ const NavBar = () => {
                         <button type="button" className="pr-24">Buscar</button>
                     </div>
                     {/* div carrito pantalla grande para al hacer click desplegar informacion del carrito */}
-                    <div onClick={() => setOpenCarrito(true)} className="cursor-pointer">
+                    <Link to='/Nike-clon/Cart'>
                         <CartWidget />
-                    </div>
+                    </Link>
                 </div>
             </div>
             {/* termina barra de navegacion desktop */}
@@ -60,9 +57,9 @@ const NavBar = () => {
                     <SearchWidget />
 
                     {/* div carrito pantalla chica para al hacer click desplegar informacion del carrito */}
-                    <div onClick={() => setOpenCarrito(true)} className="cursor-pointer">
+                    <Link to='/Nike-clon/Cart'>
                         <CartWidget />
-                    </div>
+                    </Link>
                 </div>
 
                 {/* Aca agrego un div que ocupa toda la pantalla para luego desplegar la Navbar lateral izquierda
@@ -124,28 +121,6 @@ const NavBar = () => {
                 </div>
                 {/* termina sidebar izquierda */}
             </div>
-
-            {/* empieza sidebar derecha (carrito) */}
-
-            {/* Aca agrego un div que ocupa toda la pantalla para luego desplegar la sidebar lateral derecha que sería el carrito
-                y que el resto de pantalla tenga menos opacidad */}
-            <div className={`${!openCarrito && "hidden"} min-h-screen w-full z-10
-            fixed top-0 right-0 left-0 bg-black opacity-30`} onClick={() => setOpenCarrito(false)}></div>
-
-            <div className={`${!openCarrito && "hidden"} bg-white min-h-screen w-[420px] fixed top-0 right-0 z-50`}>
-                <div className=" flex justify-between items-center mx-8 my-4">
-                    <h1 className=" text-base font-medium">MI COMPRA</h1>
-                    <button onClick={() => setOpenCarrito(false)}>
-                        <CloseMenuWidget></CloseMenuWidget>
-                    </button>
-                </div>
-                <hr/>
-
-                <div className="min-h-screen w-full flex justify-center items-center">
-                    <CarritoVacio></CarritoVacio>
-                </div>
-            </div>
-
         </nav>
     )
 }

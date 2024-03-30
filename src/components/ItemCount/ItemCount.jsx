@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const ItemCount = ({initial = 1, stock, onAdd}) => {
+const ItemCount = ({ initial = 1, stock, onAdd }) => {
     const [count, setCount] = useState(initial)
-    
+
     const decrement = () => {
         if (count > 1) {
-            setCount(prev => prev -1)
+            setCount(prev => prev - 1)
         }
     }
 
@@ -15,12 +16,16 @@ const ItemCount = ({initial = 1, stock, onAdd}) => {
         }
     }
 
-    return(
-        <div className="mt-8 flex items-center">
-            <button className="bg-gris text-black p-3 rounded-lg text-lg" onClick={decrement}>-</button>
-            <button className="px-12 mx-2 p-3 bg-black rounded-2xl text-white font-medium hover:bg-grisOscuro transition-all" onClick={() => onAdd(count)}>Agregar a carrito</button>
-            <button className="bg-gris text-black p-3 rounded-lg" onClick={increment}>+</button>
-            <h3 className=" bg-black text-white p-3 rounded-lg ml-4 text-lg">{count}</h3>
+    return (
+        <div className="grid gap-2 mt-8">
+            <div className="flex mobile:justify-center items-center">
+                <button className="bg-gris text-black py-2 px-8 text-xl rounded-s-3xl border-r-[1px]  transition-all hover:bg-grisOscuro hover:text-white" onClick={decrement}>-</button>
+                <h3 className="bg-gris text-black py-2 px-6 text-xl">{count}</h3>
+                <button className="bg-gris text-black py-2 px-8 text-xl rounded-e-3xl border-l-[1px] transition-all hover:bg-grisOscuro hover:text-white " onClick={increment}>+</button>
+            </div>
+            <div className="flex w-full mobile:justify-center">
+                <Link to='/Nike-clon/Cart' className="px-[44px] text-center mobile:w-full py-3 bg-black rounded-2xl text-white font-medium hover:bg-grisOscuro transition-all" onClick={() => onAdd(count)}>Agregar a carrito</Link>
+            </div>
         </div>
     )
 }
