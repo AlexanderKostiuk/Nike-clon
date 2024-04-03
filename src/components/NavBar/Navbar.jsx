@@ -53,7 +53,7 @@ const NavBar = () => {
 
                 <img src={logo} alt="Logo_nike" className="size-14" />
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-center">
                     <SearchWidget />
 
                     {/* div carrito pantalla chica para al hacer click desplegar informacion del carrito */}

@@ -6,7 +6,7 @@ import Hero from './components/Hero/Hero'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Footer from './components/Footer/Footer'
 import PageNotFound from "./components/PageNotFound/PageNotFound"
-import CartView from "./components/Cart/Cart"
+import Cart from "./components/Cart/Cart"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { CartProvider } from "./context/CartContext"
 
@@ -15,8 +15,8 @@ function App() {
 
   return (
     <>
-      <CartProvider>
-        <BrowserRouter>
+      <BrowserRouter>
+        <CartProvider>
           <ScrollToTop></ScrollToTop>
           <BannerTop></BannerTop>
           <NavBar />
@@ -26,11 +26,11 @@ function App() {
             <Route path='/Nike-clon/category/:categoryId' element={<Hero></Hero>}></Route>
             <Route path='/Nike-clon/category/:categoryId/item/:itemId' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
             <Route path='/Nike-clon/NotFound' element={<PageNotFound></PageNotFound>}></Route>
-            <Route path='Nike-clon/Cart' element={<CartView></CartView>}></Route>
+            <Route path='Nike-clon/Cart' element={<Cart></Cart>}></Route>
           </Routes>
           <Footer></Footer>
-        </BrowserRouter>
-      </CartProvider>
+        </CartProvider>
+      </BrowserRouter>
     </>
   )
 }
