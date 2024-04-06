@@ -1,28 +1,35 @@
 import { useState, useEffect } from "react"
-import { getProductsById } from "../../asyncMock"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
 import Banner from "../Banner/Banner"
-
+import { getDoc, doc } from "firebase/firestore"
+import { db } from "../../Services/firebase/firebaseConfig"
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState(null)
 
-    const {itemId} = useParams()
+    const { itemId } = useParams()
 
     useEffect(() => {
-        getProductsById(itemId)
-            .then(result => {
-                setProduct(result)
+        const productDoc = doc(db, 'Products', itemId)
+
+        getDoc(productDoc)
+            .then(queryDocumentSnapshot => {
+                const data = queryDocumentSnapshot.data()
+                const productAdapted = { id: queryDocumentSnapshot.id, ...data }
+                setProduct(productAdapted)
+            })  
+            .catch(error => {
+                console.log(error)
             })
     }, [itemId])
-    
+
     return (
         <div className="flex-col">
-            <ItemDetail {... product } ></ItemDetail>
+            <ItemDetail {...product} ></ItemDetail>
             <Banner></Banner>
         </div>
-    ) 
+    )
 }
 
 export default ItemDetailContainer

@@ -9,6 +9,7 @@ import PageNotFound from "./components/PageNotFound/PageNotFound"
 import Cart from "./components/Cart/Cart"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { CartProvider } from "./context/CartContext"
+import Checkout from "./components/Checkout/Checkout"
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
             <Route path='/Nike-clon/category/:categoryId' element={<Hero></Hero>}></Route>
             <Route path='/Nike-clon/category/:categoryId/item/:itemId' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
             <Route path='/Nike-clon/NotFound' element={<PageNotFound></PageNotFound>}></Route>
-            <Route path='Nike-clon/Cart' element={<Cart></Cart>}></Route>
+            <Route path='/Nike-clon/Cart' element={<Cart></Cart>}></Route>
+            <Route path='/Nike-clon/Checkout' element={<Checkout></Checkout>}></Route>
           </Routes>
           <Footer></Footer>
         </CartProvider>

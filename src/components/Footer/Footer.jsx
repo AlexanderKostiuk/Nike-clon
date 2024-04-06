@@ -18,7 +18,7 @@ const Footer = () => {
           </Link>
         </div>
         {/* Ayuda */}
-        <div >
+        <div>
           <h1 className="pt-8 laptop:pt-0 text-white text-sm mb-2 font-bold">AYUDA</h1>
           <Link to='/Nike-clon/NotFound' onClick={<ScrollToTop></ScrollToTop>}>
             <p className="text-zinc-500 text-xs py-1 cursor-pointer transition-all hover:text-white">Envíos y entregas</p>
