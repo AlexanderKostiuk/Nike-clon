@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import logo from "../../assets/Logo_NIKE.svg"
 import JumpmanLogo from "../../assets/Jumpman_logo.svg"
 import CartWidget from "../Widgets/CartWidget/CartWidget"
@@ -9,10 +9,28 @@ import InfoWidget from "../Widgets/InfoWidget/InfoWidget"
 import TiendasWidget from "../Widgets/TiendasWidget/TiendasWidget"
 import ArrowRightWidget from "../Widgets/ArrowRightWidget/ArrowRight"
 import { Link } from "react-router-dom"
+import { QuerySnapshot, collection, getDocs, orderBy, query } from "firebase/firestore"
+import { db } from "../../Services/firebase/firebaseConfig"
 
 
 const NavBar = () => {
     const [open, setOpen] = useState(false)
+    const [Categories, setCategories] = useState([])
+
+    useEffect(() => {
+        const categoriesCollection = query(collection(db, 'Categories'), orderBy('order', 'asc'))
+        getDocs(categoriesCollection)
+            .then(QuerySnapshot => {
+                const categoriesAdapted = QuerySnapshot.docs.map(doc => {
+                    const data = doc.data()
+                    return { id: doc.id, ...data }
+                })
+                setCategories(categoriesAdapted)
+            })
+            .catch(error => {
+                console.error('Error')
+            })
+    }, [])
 
     return (
         <nav className="sticky top-0 w-full opacity-100 z-[9999999]">
@@ -24,11 +42,14 @@ const NavBar = () => {
 
                 <div>
                     <ul className="flex gap-4 text-base ml-24">
-                        <Link to='/Nike-clon' className="underline-offset-8 hover:underline"><li>Destacados</li></Link>
-                        <Link to='./Nike-clon/category/Hombre' className="underline-offset-8 hover:underline"><li>Hombre</li></Link>
-                        <Link to='./Nike-clon/category/Mujer'className="underline-offset-8 hover:underline"><li>Mujer</li></Link>
-                        <Link to='./Nike-clon/category/Kids'className="underline-offset-8 hover:underline"><li>Niño/a</li></Link>
-                        <Link to='./Nike-clon/category/Accesorios'className="underline-offset-8 hover:underline"><li>Accesorios</li></Link>
+                        <Link to='./Nike-clon' className="underline-offset-8 transition-all hover:underline"><li>Destacados</li></Link>
+
+                        {
+                            Categories.map(cat => {
+                                return <Link className="underline-offset-8 transition-all hover:underline" to={`./Nike-clon/category/${cat.slug}`} key={cat.id}>{cat.name}</Link>
+                            })
+                        }
+                        
                     </ul>
                 </div>
 
@@ -76,43 +97,32 @@ const NavBar = () => {
                             <CloseMenuWidget></CloseMenuWidget>
                         </button>
                     </div>
-                    <ul className="ml-4">
-                        <Link to='./Nike-clon' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <li className="text-xl">Destacados</li>
-                            <ArrowRightWidget></ArrowRightWidget>
-                        </Link>
-                        <Link to='./Nike-clon/category/Hombre' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <li className="text-xl">Hombre</li>
-                            <ArrowRightWidget></ArrowRightWidget>
-                        </Link>
-                        <Link to='./Nike-clon/category/Mujer' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <li className="text-xl">Mujer</li>
-                            <ArrowRightWidget></ArrowRightWidget>
-                        </Link>
-                        <Link to='./Nike-clon/category/Kids' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <li className="text-xl">Niño/as</li>
-                            <ArrowRightWidget></ArrowRightWidget>
-                        </Link>
-                        <Link to='./Nike-clon/category/Accesorios' onClick={() => setOpen(false)} className="flex items-center justify-between mt-6 mr-4 cursor-pointer">
-                            <li className="text-xl">Accesorios</li>
-                            <ArrowRightWidget></ArrowRightWidget>
-                        </Link>
-
+                    <ul className="mt-4">
+                        {
+                            Categories.map(cat => {
+                                return <Link onClick={() => setOpen(false)}
+                                    className="flex px-4 py-2 items-center justify-between cursor-pointer text-xl underline-offset-8 transition-all hover:bg-gris"
+                                    to={`./Nike-clon/category/${cat.slug}`}
+                                    key={cat.id}>{cat.name}
+                                    <ArrowRightWidget></ArrowRightWidget>
+                                </Link>
+                            })
+                        }
                     </ul>
-                    <Link to='./Nike-clon/NotFound'  onClick={() => setOpen(false)}>
+                    <Link to='./Nike-clon/NotFound' onClick={() => setOpen(false)}>
                         <div className=" flex items-center gap-2 ml-4 mt-6">
                             <img src={JumpmanLogo} alt="jumpman logo" className="size-8" />
                             <p className=" font-bold">Jordan</p>
                         </div>
                     </Link>
 
-                    <Link to='./Nike-clon/NotFound'  onClick={() => setOpen(false)}>
+                    <Link to='./Nike-clon/NotFound' onClick={() => setOpen(false)}>
                         <div className="flex items-center ml-4 mt-6 gap-4 ">
                             <InfoWidget></InfoWidget>
                             <p className=" text-xs font-bold">Ayuda</p>
                         </div>
                     </Link>
-                    <Link to='./Nike-clon/NotFound'  onClick={() => setOpen(false)}>
+                    <Link to='./Nike-clon/NotFound' onClick={() => setOpen(false)}>
                         <div className="flex items-center ml-4 mt-6 gap-4">
                             <TiendasWidget></TiendasWidget>
                             <p className=" text-xs font-semibold">Buscar tiendas</p>
