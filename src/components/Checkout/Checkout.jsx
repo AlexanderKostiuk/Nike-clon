@@ -2,21 +2,26 @@ import { useContext, useState } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { collection, query, where, documentId, getDocs, QuerySnapshot, writeBatch, addDoc } from 'firebase/firestore'
 import { db } from '../../Services/firebase/firebaseConfig'
+import { Link } from 'react-router-dom'
 
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
     const [orderId, setOrderId] = useState(null)
+    const [email, setEmail] = useState('');
+    const [confirmEmail, setConfirmEmail] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [phone, setPhone] = useState('');
     const { cart, total, clearCart } = useContext(CartContext)
 
-    const createOrder = async (userData) => {
+    const createOrder = async () => {
         try {
             setLoading(true)
             const objOrder = {
                 buyer: {
-                    name: 'alexander kosti',
-                    email: 'alexan.contact@gmail.com',
-                    phone: '123456789'
+                    name: `${firstName} ${lastName}`,
+                    email: email,
                 },
                 items: cart,
                 total: total
@@ -66,22 +71,72 @@ const Checkout = () => {
 
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        if (email === confirmEmail) {
+            createOrder();
+        } else {
+            <h1>Error, los correos electronicos no coinciden</h1>
+        }
+    }
+
     if (loading) {
-        return <h1>Su orden está siendo generada...</h1>
+        return (
+            <div className='flex justify-center py-16'>
+                <h1 className='text-2xl'>Su orden está siendo generada...</h1>
+            </div>
+        )
     }
 
     if (orderId) {
-        return <h1>El id de su orden es: {orderId}</h1>
+        return (
+            <div className='grid gap-4 justify-center items-center text-center p-8'>
+                <h1 className='text-2xl'>Producto/s comprado !!</h1>
+                <div className='flex items-center gap-4'>
+                    <h2 className='text-lg'>El id de su orden es:</h2>
+                    <p className='bg-gris p-2'> {orderId}</p>
+                </div>
+                <Link to='/Nike-clon' className="bg-black text-white py-2 px-4 rounded-full transition-all hover:opacity-80" >Volver a inicio</Link>
+            </div>
+        )
+
     }
 
     return (
-        <div className='block my-4'>
-            <div className='text-center'>
-                <h1 className='text-2xl font-medium'>Checkout</h1>
-                <div>
-                    <h3>HACER O CREAR FOMRULARIO PARA INGRESO DE DATOS</h3>
-                </div>
-                <button onClick={createOrder} className="bg-black text-white py-2 px-4 rounded-full transition-all hover:bg-green-600">Generar orden de compras</button>
+        <div className='my-16'>
+            <h1 className='text-2xl font-medium p-4 text-center'>CHECKOUT</h1>
+            <div className='flex justify-center'>
+                <form onSubmit={handleSubmit} >
+                    {/* nombre y apellido */}
+                    <div className="flex gap-4 mt-2 ml-2">
+                        <input type="text" placeholder="Ingrese su nombre" value={firstName} onChange={(e) => setFirstName(e.target.value)} required
+                            className='border-b-2 py-1 placeholder:text-left laptop:w-96' />
+
+                        <input type="text" placeholder="Ingrese su apellido" value={lastName} onChange={(e) => setLastName(e.target.value)} required
+                            className='border-b-2 placeholder:text-left laptop:w-96' />
+                    </div>
+
+                    <div className="flex gap-4 mt-2 ml-2">
+                        <input type="email" placeholder="Ingrese su correo electrónico" value={email} onChange={(e) => setEmail(e.target.value)} required
+                            className='py-1 border-b-2 placeholder:text-left laptop:w-96' />
+
+                        <input type="email" placeholder="Confirme su correo electrónico" value={confirmEmail} onChange={(e) => setConfirmEmail(e.target.value)} required
+                            className=" border-b-2 placeholder:text-left laptop:w-96" />
+                    </div>
+
+
+                    {email !== "" && email === confirmEmail && (
+                        <div className='flex justify-center'>
+                            <button type="submit" className="bg-black text-white py-2 px-4 my-4 rounded-full transition-all hover:opacity-80">Generar orden de compra</button>
+                        </div>
+                    )}
+                    {email !== confirmEmail && (
+                        <div className='flex justify-center'>
+                            <p className="text-red-500">Los correos electrónicos no coinciden</p>
+                        </div>
+                    )}
+                </form>
             </div>
         </div>
     )

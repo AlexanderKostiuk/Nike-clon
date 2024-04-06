@@ -42,10 +42,13 @@ const NavBar = () => {
 
                 <div>
                     <ul className="flex gap-4 text-base ml-24">
-                        <Link to='./Nike-clon' className="underline-offset-8 transition-all hover:underline"><li>Destacados</li></Link>
 
+{/*                         <Link to='./Nike-clon' className="underline-offset-8 transition-all hover:underline"><li>Destacados</li></Link> */}
                         {
                             Categories.map(cat => {
+                                if (cat.slug === 'Destacados') {
+                                    return <Link to='./Nike-clon' key={cat.id}> {cat.name}</Link>
+                                } 
                                 return <Link className="underline-offset-8 transition-all hover:underline" to={`./Nike-clon/category/${cat.slug}`} key={cat.id}>{cat.name}</Link>
                             })
                         }
