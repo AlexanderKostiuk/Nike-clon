@@ -109,7 +109,7 @@ const Checkout = () => {
             <div className='flex justify-center'>
                 <form onSubmit={handleSubmit} >
                     {/* nombre y apellido */}
-                    <div className="flex gap-4 mt-2 ml-2">
+                    <div className="flex gap-4 m-6">
                         <input type="text" placeholder="Ingrese su nombre" value={firstName} onChange={(e) => setFirstName(e.target.value)} required
                             className='border-b-2 py-1 placeholder:text-left laptop:w-96' />
 
@@ -117,7 +117,7 @@ const Checkout = () => {
                             className='border-b-2 placeholder:text-left laptop:w-96' />
                     </div>
 
-                    <div className="flex gap-4 mt-2 ml-2">
+                    <div className="flex gap-4 m-6">
                         <input type="email" placeholder="Ingrese su correo electrónico" value={email} onChange={(e) => setEmail(e.target.value)} required
                             className='py-1 border-b-2 placeholder:text-left laptop:w-96' />
 

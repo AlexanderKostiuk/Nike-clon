@@ -42,17 +42,15 @@ const NavBar = () => {
 
                 <div>
                     <ul className="flex gap-4 text-base ml-24">
-
-{/*                         <Link to='./Nike-clon' className="underline-offset-8 transition-all hover:underline"><li>Destacados</li></Link> */}
                         {
                             Categories.map(cat => {
                                 if (cat.slug === 'Destacados') {
                                     return <Link to='./Nike-clon' key={cat.id}> {cat.name}</Link>
-                                } 
+                                }
                                 return <Link className="underline-offset-8 transition-all hover:underline" to={`./Nike-clon/category/${cat.slug}`} key={cat.id}>{cat.name}</Link>
                             })
                         }
-                        
+
                     </ul>
                 </div>
 
@@ -103,8 +101,16 @@ const NavBar = () => {
                     <ul className="mt-4">
                         {
                             Categories.map(cat => {
+                                if (cat.slug === 'Destacados') {
+                                    return <Link onClick={() => setOpen(false)}
+                                        className="flex py-2 justify-between items-center px-4 text-xl"
+                                        to='./Nike-clon'
+                                        key={cat.id}> {cat.name}
+                                        <ArrowRightWidget></ArrowRightWidget>
+                                    </Link>
+                                }
                                 return <Link onClick={() => setOpen(false)}
-                                    className="flex px-4 py-2 items-center justify-between cursor-pointer text-xl underline-offset-8 transition-all hover:bg-gris"
+                                    className="flex px-4 py-2 items-center justify-between cursor-pointer text-xl"
                                     to={`./Nike-clon/category/${cat.slug}`}
                                     key={cat.id}>{cat.name}
                                     <ArrowRightWidget></ArrowRightWidget>
